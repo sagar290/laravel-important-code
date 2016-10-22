@@ -1,0 +1,11 @@
+foreach($input['my_field'] as $key => $value) {
+    foreach ($value as $valueKey => $valueValue) {
+        $validator->mergeRules("my_field.$key.$valueKey", 'required');
+    }
+}
+
+/*  Looks like this */
+'my_field.0.name' => 'required',
+'my_field.0.email' => 'email',
+'my_field.1.name' => 'required',
+'my_field.1.email' => 'email',
