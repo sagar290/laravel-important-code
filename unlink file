@@ -1,0 +1,5 @@
+$attachment_path = PublicationAttachmentModel::where('publication_id', $id)->pluck('attachment_url');
+        foreach ($attachment_path as $path ) {
+            $delet_path = public_path($path);
+            $delete = unlink($delet_path);
+        }
