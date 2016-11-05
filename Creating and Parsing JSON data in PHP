@@ -1,0 +1,11 @@
+$json_data = array ('id'=>1,'name'=>"rolf",'country'=>'russia',"office"=>array("google","oracle"));
+echo json_encode($json_data);
+/*
+and
+Following code will parse the JSON data into PHP arrays.
+*/
+$json_string='{"id":1,"name":"rolf","country":"russia","office":["google","oracle"]} ';
+$obj=json_decode($json_string);
+//print the parsed data
+echo $obj->name; //displays rolf
+echo $obj->office[0]; //displays google
